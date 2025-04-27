@@ -41,8 +41,21 @@
     }
 
     .logo {
-      width: 150px;
+      width: 220px;
       margin-bottom: 20px;
+      animation: moveLogo 5s ease-in-out infinite;
+    }
+
+    @keyframes moveLogo {
+      0% {
+        transform: translateX(-100px);
+      }
+      50% {
+        transform: translateX(100px) rotate(360deg);
+      }
+      100% {
+        transform: translateX(-100px); 
+      }
     }
 
     .message {
@@ -58,8 +71,36 @@
       font-weight: bold;
       margin-top: 20px;
     }
+
+    /* تحسين شكل الرابط */
+    .link-container {
+      margin-top: 20px;
+    }
+
+    .link {
+      font-size: 20px;
+      font-weight: bold;
+      color: #1e90ff;
+      cursor: pointer;
+      text-decoration: underline;
+      transition: all 0.3s;
+    }
+
+    .link:hover {
+      color: #ffffff;
+    }
   </style>
   <script>
+    function copyToClipboard() {
+      const copyText = document.getElementById("server-link");
+      const range = document.createRange();
+      range.selectNode(copyText);
+      window.getSelection().removeAllRanges(); // Clear current selection
+      window.getSelection().addRange(range); // Select the text
+      document.execCommand("copy"); // Copy the selected text
+      alert("Server link copied: " + copyText.textContent); // Optional confirmation
+    }
+
     setTimeout(function() {
       window.location.href = "mtasa://78.47.204.80:31315";
     }, 5000); // 5000ms = 5 seconds
@@ -70,8 +111,10 @@
     <img src="https://i.imgur.com/T2YzB87.png" alt="LogiXGaming Logo" class="logo">
     <h1>Redirecting...</h1>
     <p class="redirect-message">You will be redirected to the LogiXGaming server in 5 seconds.</p>
-    <p class="message">If the redirect doesn't work, copy and paste the following link into MTA:</p>
-    <p class="message"><strong>mtasa://78.47.204.80:31315</strong></p>
+    <p class="message">If the redirect doesn't work, click the link below to copy it to clipboard:</p>
+    <div class="link-container">
+      <span id="server-link" class="link" onclick="copyToClipboard()">mtasa://78.47.204.80:31315</span>
+    </div>
   </div>
 </body>
 </html>
