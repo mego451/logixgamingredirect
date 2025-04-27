@@ -2,64 +2,95 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Join LogiXGaming Server</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background-color: #f4f4f4;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #4c6ef5, #2c3e50);
       margin: 0;
       padding: 0;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      color: #333;
+      color: #ffffff;
     }
+
     .container {
-      background-color: #ffffff;
-      padding: 30px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px 40px;
       border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      width: 400px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      width: 100%;
+      max-width: 500px;
     }
+
     h1 {
-      font-size: 30px;
+      font-size: 36px;
       color: #1e90ff;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     }
+
     p {
       font-size: 18px;
-      color: #555;
+      margin-top: 10px;
+      color: #ddd;
     }
+
     .logo {
       width: 150px;
       margin-bottom: 20px;
     }
+
     .message {
-      font-size: 16px;
+      font-size: 18px;
+      font-weight: 600;
       margin-top: 20px;
-      color: #777;
+      color: #ffffff;
     }
+
     .redirect-message {
+      font-size: 20px;
+      color: #1e90ff;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #1e90ff;
+      color: white;
       font-size: 18px;
       font-weight: bold;
-      color: #1e90ff;
+      text-decoration: none;
+      border-radius: 8px;
+      margin-top: 30px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .btn:hover {
+      background-color: #00bfff;
+      transform: scale(1.1);
     }
   </style>
   <script>
-    // الانتقال إلى الرابط بعد 5 ثواني
     setTimeout(function() {
       window.location.href = "mtasa://78.47.204.80:31315";
-    }, 3000); // 5000 ملي ثانية (5 ثواني)
+    }, 5000); // 5000ms = 5 seconds
   </script>
 </head>
 <body>
   <div class="container">
     <img src="https://i.imgur.com/T2YzB87.png" alt="LogiXGaming Logo" class="logo">
     <h1>Redirecting...</h1>
-    <p class="redirect-message">You will be redirected to the LogiXGaming server in 3 seconds.</p>
+    <p class="redirect-message">You will be redirected to the LogiXGaming server in 5 seconds.</p>
     <p class="message">If the redirect doesn't work, copy and paste the following link into MTA:</p>
-    <p class="message"><b>mtasa://78.47.204.80:31315</b></p>
+    <p class="message"><strong>mtasa://78.47.204.80:31315</strong></p>
+    <a href="mtasa://78.47.204.80:31315" class="btn">Join Now</a>
   </div>
 </body>
 </html>
